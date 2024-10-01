@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service;
 @Repository
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
 
-    Producto findByNombre(String nombre);
-    void deleteByNombre(String nombre);
+    Producto findByNombreProducto(String nombreProducto);
+    void deleteByNombreProducto(String nombreProducto);
 }

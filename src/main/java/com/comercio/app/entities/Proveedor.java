@@ -13,7 +13,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @ToString
 //@Builder
-@Table(name = "proveedor", schema = "comercio_it")
+@Table(name = "proveedor")
 @Entity
 public class Proveedor implements Serializable {
     private static final long serialVersionUID = 1L;

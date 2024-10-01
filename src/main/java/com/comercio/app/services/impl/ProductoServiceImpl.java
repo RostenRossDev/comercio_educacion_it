@@ -16,12 +16,12 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     public Producto buscarPorId(Long id) {
-        return productoRepository.findById(id).orElseThrow(null);
+        return productoRepository.findById(id).orElse(null);
     }
 
     @Override
     public Producto buscarPorNombre(String nombre) {
-        return productoRepository.findByNombre(nombre);
+        return productoRepository.findByNombreProducto(nombre);
     }
 
     @Override
@@ -41,6 +41,6 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     public void borrarPorNombre(String nombre) {
-        productoRepository.deleteByNombre(nombre);
+        productoRepository.deleteByNombreProducto(nombre);
     }
 }

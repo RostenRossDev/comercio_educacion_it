@@ -10,7 +10,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Table(name = "productos", schema = "comercio_it")
+@Table(name = "productos")
 @Entity
 public class Producto implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -22,7 +22,7 @@ public class Producto implements Serializable {
     @Column(name = "nombre_producto")
     private String nombreProducto;
 
-    private String precio;
-    private Long descuento;
+    private Double precio;
+    private Integer descuento;
     private Integer stock;
 }
