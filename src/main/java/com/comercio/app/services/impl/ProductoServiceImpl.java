@@ -43,4 +43,14 @@ public class ProductoServiceImpl implements ProductoService {
     public void borrarPorNombre(String nombre) {
         productoRepository.deleteByNombreProducto(nombre);
     }
+
+    @Override
+    public List<Producto> busquedaCompleja1(String producto1, String producto2) {
+        return productoRepository.busquedaComplejaPorDescuentoStockYPrecio1(producto1, producto2);
+    }
+
+    @Override
+    public List<Producto> busquedaCompleja2(String producto1) {
+        return productoRepository.busquedaComplejaPorDescuentoStockYPrecio2(producto1);
+    }
 }

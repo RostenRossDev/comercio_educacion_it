@@ -12,4 +12,7 @@ public interface ProductoService {
     Producto guardarActualizar(Producto producto);
     void borrarPorId(Long id);
     void borrarPorNombre(String nombre);
+
+    List<Producto> busquedaCompleja1(String producto1, String producto2);
+    List<Producto> busquedaCompleja2(String producto);
 }
