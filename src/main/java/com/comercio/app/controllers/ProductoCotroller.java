@@ -20,7 +20,6 @@ public class ProductoCotroller {
     @Autowired
     private ProductoService productoService;
 
-
     @GetMapping("/buscar_por_id/{idProcuto}")
     public ResponseEntity<?> buscarProductoPorIdConPathVariable(@PathVariable(name = "idProcuto") Long id){
         Producto producto = productoService.buscarPorId(id);

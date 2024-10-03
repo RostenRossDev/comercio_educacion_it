@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service("servicio1")
 public class ProductoServiceImpl implements ProductoService {
 
     @Autowired
