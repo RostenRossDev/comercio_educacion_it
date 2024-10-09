@@ -1,33 +1,30 @@
 package com.comercio.app.entities;
 
-
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.extern.log4j.Log4j2;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-//@Builder
-@Table(name = "proveedor")
+@Table(name = "datos_de_usuario")
 @Entity
-public class Proveedor implements Serializable {
+public class DatosDeUsuario implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nombre;
+    private String apellido;
+    private String direccion;
+    private Boolean vip;
 
-    @Column(nullable = false, unique = true, length = 10)
-    private String cuit;
-
-    @OneToMany(mappedBy = "proveedor", cascade = CascadeType.ALL, orphanRemoval = true)
-    List<Producto> productos;
+    @OneToOne
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+    private Usuario usuario;
+    /*Cual quier otro dato de nuestro usuario*/
 }

@@ -49,3 +49,7 @@ INSERT INTO productos (nombre_producto, precio, descuento, stock) VALUES ('Guant
 INSERT INTO productos (nombre_producto, precio, descuento, stock) VALUES ('Pantalones cortos de deporte', 19.99, 20, 50);
 INSERT INTO productos (nombre_producto, precio, descuento, stock) VALUES ('Pantalón vaquero', 44.99, 10, 60);
 INSERT INTO productos (nombre_producto, precio, descuento, stock) VALUES ('Cazadora', 55.50, 25, 20);
+
+
+INSERT INTO roles (name) VALUES ('ROLE_ADMIN');
+INSERT INTO roles (name) VALUES ('ROLE_USER');

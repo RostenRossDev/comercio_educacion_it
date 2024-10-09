@@ -1,9 +1,7 @@
 package com.comercio.app.entities;
 
-
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.extern.log4j.Log4j2;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,10 +11,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-//@Builder
-@Table(name = "proveedor")
+@Table(name = "categorias")
 @Entity
-public class Proveedor implements Serializable {
+public class Categoria implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -25,9 +22,6 @@ public class Proveedor implements Serializable {
 
     private String nombre;
 
-    @Column(nullable = false, unique = true, length = 10)
-    private String cuit;
-
-    @OneToMany(mappedBy = "proveedor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ManyToMany(mappedBy = "categorias")
     List<Producto> productos;
 }

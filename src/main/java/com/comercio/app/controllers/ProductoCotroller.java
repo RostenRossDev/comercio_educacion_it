@@ -1,6 +1,7 @@
 package com.comercio.app.controllers;
 
 import com.comercio.app.entities.Producto;
+import com.comercio.app.repositories.ProductoRepository;
 import com.comercio.app.services.ProductoService;
 import com.comercio.app.services.impl.ProductoServiceImpl;
 import lombok.extern.log4j.Log4j2;
@@ -20,12 +21,12 @@ public class ProductoCotroller {
     @Autowired
     private ProductoService productoService;
 
+
+
     @GetMapping("/buscar_por_id/{idProcuto}")
     public ResponseEntity<?> buscarProductoPorIdConPathVariable(@PathVariable(name = "idProcuto") Long id){
         Producto producto = productoService.buscarPorId(id);
 
-        //ResponseEntity response = new ResponseEntity(producto, HttpStatus.OK);
-        //new ResponseEntity(producto, HttpStatus.OK);
         return ResponseEntity.ok().body(producto);
     }
 
